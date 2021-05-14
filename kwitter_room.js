@@ -1,5 +1,5 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
       apiKey: "AIzaSyBB805nW41aCopPfz9E0e1f6p1zHyZOB28",
       authDomain: "chat-web-1.firebaseapp.com",
       databaseURL: "https://chat-web-1-default-rtdb.firebaseio.com",
@@ -25,28 +25,27 @@ function addRoom() {
 }
 
 function getData() {
-      firebase.database().ref("/").on('value', function (snapshot) { //
+      firebase.database().ref("/").on('value', function (snapshot) {
             document.getElementById("output").innerHTML = "";
             snapshot.forEach(function (childSnapshot) {
                   childKey = childSnapshot.key;
                   Room_names = childKey;
-                  //Start code
-                 console.log(Room_names)
-                  row = "<div class='room_name' id=" + Room_names + "onclick='redirectToRoomName(this.id)'>#"+Room_names+"</div><hr>"
-                  document.getElementById("output").innerHTML+= row
-                  //End code
+                 //Start code
+           row= "<div class='room_name' id="+Room_names +" onclick='redirectToRoomName(this.id)'>#" +Room_names+"</div><hr>"
+           document.getElementById("output").innerHTML+= row;
+     //End code
             });
       });
 }
 getData();
-                 function redirectToRoomName(name){
-                 console.log(name)
-                 localStorage.setItem("Room Name", name)
-                 window.location = "kwitter_page.html"
-                 }
 
-function logOut(){
-     localStorage.removeItem("User Name");
-     localStorage.removeItem("Room Name");
-     window.location="kwitter.html"
+function redirectToRoomName(name) {
+ localStorage.setItem("Room Name", name)
+    window.location = "kwitter_page.html"
+}
+
+function logOut() {
+      localStorage.removeItem("User Name");
+      localStorage.removeItem("Room Name");
+      window.location.replace("index.html")
 }
