@@ -32,7 +32,7 @@ function getData() {
                         message = message_data["message"];
                         like = message_data["like"]
                  
-                          row = "<h4> "+ named +"</h4><h4 class='message_h4'>"+ message +"</h4><button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'><span class='glyphicon glyphicon-thumbs-up'>  Like:"+ like +"</span></button><hr>";
+                          row = "<h4> "+ named +"</h4><h4 class='message_h4'>"+ message +"</h4><button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'><span class='glyphicon glyphicon-thumbs-up'>  Like: "+ like +"</span></button><hr>";
       document.getElementById("output").innerHTML += row;                      
                         //End code
                   }
