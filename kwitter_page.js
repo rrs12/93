@@ -34,7 +34,10 @@ function getData() {
                  
                           row = "<h4> "+ named +"</h4><h4 class='message_h4'>"+ message +"</h4><button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'><span class='glyphicon glyphicon-thumbs-up'>  Like: "+ like +"</span></button><hr>";
       document.getElementById("output").innerHTML += row;                      
-                        //End code
+                        //End code    
+  var objDiv = document.getElementById("output");
+  objDiv.scrollTop = objDiv.scrollHeight;
+
                   }
             });
       });
