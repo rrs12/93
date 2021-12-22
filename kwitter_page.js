@@ -14,6 +14,10 @@ firebase.initializeApp(firebaseConfig);
 user_name = localStorage.getItem("User Name");
 room_name = localStorage.getItem("Room Name");
 
+
+var chatHistory = document.getElementById("output");
+chatHistory.scrollTop = chatHistory.scrollHeight;
+
 function getData() {
       firebase.database().ref("/" + room_name).on('value', function (snapshot) {
             document.getElementById("output").innerHTML = "";
