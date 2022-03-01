@@ -104,3 +104,8 @@ text-align: center;
 .glyphicon glyphicon-thumbs-up{
 margin-right:5px;
 }
+.time{
+	float: right;
+	color: gray;
+	font-weight: 200;
+}

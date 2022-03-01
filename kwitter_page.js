@@ -27,12 +27,15 @@ function getData() {
                   if (childKey != "Purpose") {
                         firebase_message_id = childKey;
                         message_data = childData;
+                        
                         //Start code
                         named = message_data["name"];
                         message = message_data["message"];
-                        like = message_data["like"]
+                        like = message_data["like"];
+                        timed= message_data['time']
+                        
                  
-                          row = "<h4> "+ named +"</h4><h4 class='message_h4'>"+ message +"</h4><button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'><span class='glyphicon glyphicon-thumbs-up'>  Like: "+ like +"</span></button><hr>";
+                          row = "<h4> "+ named+"<b class='time'> "+timed+"</b>"+"</h4><h4 class='message_h4'>"+ message +"</h4><button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'><span class='glyphicon glyphicon-thumbs-up'>  Like: "+ like +"</span></button><hr>";
       document.getElementById("output").innerHTML += row;                      
                         //End code    
   var objDiv = document.getElementById("output");
@@ -45,12 +48,15 @@ function getData() {
 getData();
 
 function send() {
+      var today = new Date();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       msg = document.getElementById("msg").value;
 
       firebase.database().ref(room_name).push({
             name: user_name,
             message: msg,
-            like: 0
+            like: 0,
+            time: time
       })
       document.getElementById("msg").value = ""
 }
