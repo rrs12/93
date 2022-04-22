@@ -39,8 +39,9 @@
                           document.getElementById("output").innerHTML += row;
 
                           snapshot.forEach((snapshot, i) => {
-                                if (i > 29) {
-                                      firebase.database().ref("/" + room_name).remove()
+                                
+                                if (i > 49) {
+                                      firebase.database().ref("/" + room_name).update({})
                                 }
                           })
                           //End code    
