@@ -79,7 +79,7 @@
             like: 0,
             time: time
       })
-      document.getElementById("msg").value = ""
+      document.getElementById("url").value = ""
 }
   //like_click = 0
 
