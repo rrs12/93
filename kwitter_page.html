@@ -36,6 +36,7 @@
 	<center>
 <div style='margin-bottom:15px;'>
 		<span><input type="text" placeholder="Type Message..." id="msg"></span> <span><button class="btn btn-success fa fa-paper-plane" onclick="send()">
+	</button></span><span><button class="btn btn-success fa fa-file-image-o" data-toggle="modal" data-target="#exampleModal">
 	</button></span>
 		<br><br><br>
 		</div>
@@ -47,10 +48,31 @@
 			padding: 5px !important;
 		}
 
-		.fa-paper-plane {
+		.fa {
 			width: 5% !important;
+			margin: 5px;
 		}
 	</style>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Img URL</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<input type="text" placeholder="Type URL">
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary" id="submit_image">Submit</button>
+		</div>
+	  </div>
+	</div>
+  </div>
 
 	<script src="kwitter_page.js"></script>
 </body>
