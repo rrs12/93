@@ -67,6 +67,20 @@
         })
         document.getElementById("msg").value = ""
   }
+
+  function send_image() {
+      var today = new Date();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      image_url = document.getElementById("url").value;
+
+      firebase.database().ref(room_name).push({
+            name: user_name,
+            message: '<img src='+ image_url+'>',
+            like: 0,
+            time: time
+      })
+      document.getElementById("msg").value = ""
+}
   //like_click = 0
 
   function updateLike(message_id) {
