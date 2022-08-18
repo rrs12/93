@@ -38,12 +38,7 @@
                           row = "<h4> " + named + "<b class='time'> " + timed + "</b>" + "</h4><h4 class='message_h4'>" + message + "</h4><button class='btn btn-warning' id='" + firebase_message_id + "' value='" + like + "' onclick='updateLike(this.id)'><span class='glyphicon glyphicon-thumbs-up'>  Like: " + like + "</span></button><hr>";
                           document.getElementById("output").innerHTML += row;
 
-                          snapshot.forEach((snapshot, i) => {
-                                
-                                if (i > 49) {
-                                      firebase.database().ref("/" + room_name).update({})
-                                }
-                          })
+
                           //End code    
                           var objDiv = document.getElementById("output");
                           objDiv.scrollTop = objDiv.scrollHeight;
@@ -53,6 +48,28 @@
         });
   }
   getData();
+
+  function delete_roomdata() {
+      firebase.database().ref("/" + room_name).on('value', function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+                  childKey = childSnapshot.key;
+                  childData = childSnapshot.val();
+                  if (childKey != "Purpose") {
+                        firebase_message_id = childKey;
+                        message_data = childData;
+
+                  firebase.database().ref("/"+room_name).remove()
+                  window.alert("Reload The Page To Receive/Send Message")
+                  firebase.database().ref("/").child(room_name).update({
+                        Purpose: "Add Room"
+                  });
+                  
+                  
+                  }
+            });
+      });
+}
+
 
   function send() {
         var today = new Date();
@@ -69,18 +86,18 @@
   }
 
   function send_image() {
-      var today = new Date();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      image_url = document.getElementById("url").value;
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        image_url = document.getElementById("url").value;
 
-      firebase.database().ref(room_name).push({
-            name: user_name,
-            message: '<img src='+ image_url+'>',
-            like: 0,
-            time: time
-      })
-      document.getElementById("url").value = ""
-}
+        firebase.database().ref(room_name).push({
+              name: user_name,
+              message: '<img src=' + image_url + '>',
+              like: 0,
+              time: time
+        })
+        document.getElementById("url").value = ""
+  }
   //like_click = 0
 
   function updateLike(message_id) {
@@ -98,5 +115,3 @@
         localStorage.removeItem("Room Name");
         window.location.replace("index.html")
   }
-
-  
