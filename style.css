@@ -62,6 +62,7 @@ body {
 	border-radius: 15px;
 	max-height: 400px;
 	overflow: auto;
+
 }
 
 .input_div_room_page {
@@ -107,7 +108,48 @@ body {
 	padding-left: 5px;
 	color: grey;
 	max-width: 80%;
+	
 }
+
+.message_h4 img{
+width: auto !important; /*override the width below*/
+width: 100%;
+max-width: 678px;
+clear: both;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+	.message_h4 img{
+		width: auto !important; /*override the width below*/
+		width: 100%;
+		max-width: 478px;
+		clear: both;
+		}
+  }
+
+  @media screen and (max-width: 650px) {
+	.message_h4 img{
+		width: auto !important; /*override the width below*/
+		width: 100%;
+		max-width: 278px;
+		clear: both;
+		}
+  }
+
+  @media screen and (max-width: 450px) {
+	.message_h4 img{
+		width: auto !important; /*override the width below*/
+		width: 100%;
+		max-width: 178px;
+		clear: both;
+		}
+  }
+
+
+
+
 
 .glyphicon glyphicon-thumbs-up {
 	margin-right: 5px;
@@ -122,6 +164,7 @@ body {
 hr {
 	background-color: black !important;
 	fill: black !important;
+	border: 0.125px solid rgba(0, 0, 0, 0);
 }
 
 textarea {
