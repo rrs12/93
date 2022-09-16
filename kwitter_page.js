@@ -59,7 +59,7 @@
                         message_data = childData;
 
                   firebase.database().ref("/"+room_name).remove()
-                  window.alert("Reload The Page To Receive/Send Message")
+                  window.location = window.location.href
                   firebase.database().ref("/").child(room_name).update({
                         Purpose: "Add Room"
                   });
@@ -68,6 +68,9 @@
                   }
             });
       });
+
+            ;
+        
 }
 
 
