@@ -18,6 +18,9 @@
   var objDiv = document.getElementById("output");
   objDiv.scrollTop = objDiv.scrollHeight;
 
+  input=document.getElementById("msg")
+
+  
   function getData() {
         firebase.database().ref("/" + room_name).on('value', function (snapshot) {
               document.getElementById("output").innerHTML = "";
@@ -118,3 +121,10 @@
         localStorage.removeItem("Room Name");
         window.location.replace("index.html")
   }
+
+  input.addEventListener("keypress", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        send()
+      }
+    })
