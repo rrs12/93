@@ -52,6 +52,11 @@
   }
   getData();
 
+  function room_no(){
+      document.getElementById("room_no").innerHTML+= room_name
+  }
+room_no();
+
   function delete_roomdata() {
       firebase.database().ref("/" + room_name).on('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
