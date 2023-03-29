@@ -170,3 +170,21 @@ textarea {
 	max-height: 350px;
 	min-height: 50px;
 }
+
+@media screen and (max-width: 299px) {
+    .sp {
+        font-size: 0.4em;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 799px) {
+    .sp{
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .sp {
+        font-size: 2em;
+    }
+}
