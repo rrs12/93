@@ -134,3 +134,6 @@ room_no();
       }
     })
 
+function vc(){
+      window.open("https://talky.io/NirChat_"+room_name, "_blank")
+}

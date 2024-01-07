@@ -39,7 +39,7 @@
 		<span><input type="text" placeholder="Type Message..." id="msg"></span> <span><button class="sp btn fa fa-paper-plane" onclick="send()">
 	</button></span><span><button class="sp btn  fa fa-file-image-o" data-toggle="modal" data-target="#exampleModal">
 	</button></span>
-	<span><a href="https://jump.chat/c/5995564109" target="_blank"><button class="sp btn fa fa-duotone fa-video"></button></a></span>
+	<span><button class="sp btn fa fa-duotone fa-video" onclick="vc()"></button></span>
 	
 		<br><br><br>
 		</div>
@@ -61,13 +61,15 @@
 	<div class="modal-dialog" role="document">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">Img URL</h5>
+		  <h5 class="modal-title" id="exampleModalLabel">Send image</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		  </button>
 		</div>
 		<div class="modal-body">
-			<input type="text" placeholder="Type URL" id="url">
+			<input type="text" placeholder="Enter URL" id="url">
+			<br><br>
+			Covert your image to link from: <a href="https://imgbb.com/">https://imgbb.com/</a>
 		</div>
 		<div class="modal-footer">
 		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
