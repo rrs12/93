@@ -45,3 +45,9 @@ function logOut() {
       localStorage.removeItem("Room Name");
       window.location.replace("index.html")
 }
+
+function generate(){
+     var autono=("" + Math.random()).substring(2, 8);
+     console.log(autono)
+     document.getElementById("room_name").value=autono
+}

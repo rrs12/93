@@ -243,3 +243,17 @@ body {
 		background-position: 0% 50%;
 	}
 }
+
+#re[data-tooltip] :hover :after {
+	content: attr(data-tooltip);
+	position: absolute;
+	background-color: #fff;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	top: 25px;
+	left: 50px;
+	transform: translateX(-50X);
+	white-space: nowrap;
+	z-index: 1;
+}
