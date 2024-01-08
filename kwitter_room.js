@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 user_name = localStorage.getItem("User Name");
 document.getElementById("welcome").innerHTML = "Welcome " + user_name + " !"
 
+document.getElementById("room_name").value=localStorage.getItem("Room Name")
 function addRoom() {
       room_name = document.getElementById("room_name").value
       firebase.database().ref("/").child(room_name).update({
