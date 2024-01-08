@@ -208,6 +208,11 @@ textarea {
 	color:black
 
 }
+
+.rem1-5{
+font-size: 1.5em !important;
+}
+
 @media screen and (max-width: 299px) {
     .sp {
         font-size: 0.4em;
